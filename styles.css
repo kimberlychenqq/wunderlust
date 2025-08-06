@@ -149,6 +149,9 @@ url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat:ital,wght@
     --light-gray: #EAEAEA;
     --white: #FFFFFF;
     --black: #000000;
+    --select-border: var(--purple);
+    --select-arrow: var(--purple);
+    --select-focus: var(--purple);
 }
 
 .sr-only {
@@ -169,7 +172,7 @@ h1, h2, h3{
 h4, p, q, small, nav, button, form{
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -181,90 +184,372 @@ h4, p, q, small, nav, button, form{
     background-color: var(--blue);
 }
 
-@media screen (max-width: 600px;){
-    header {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 1rem;
-            position: relative;
-        }
-    
-        #logo {
-            align-self: flex-start;
-        }
-    
-        #menu-toggle {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            text-align: right;
-        }
-    
-        /* 隱藏 checkbox */
-        #toggle {
-            display: none;
-        }
-    
-        /* Menu 按鈕 */
-        label[for="toggle"] {
-            display: inline-block;
-            background-color: var(--yellow);
-            color: var(--black);
-            padding: 0.5rem 1rem;
-            border-radius: 0.25rem;
-            cursor: pointer;
-            font-weight: bold;
-        }
-    
-        /* 選單隱藏 */
-        #menu-toggle ul {
-            display: none;
-            flex-direction: column;
-            background-color: var(--yellow);
-            padding: 1rem;
-            margin-top: 0.5rem;
-            border-radius: 0.5rem;
-        }
-    
-        /* 顯示選單 */
-        #toggle:checked+label+ul {
-            display: flex;
-        }
-        
-                header {
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-        
-                #menu-toggle {
-                    position: static;
-                    text-align: right;
-                }
-        
-                label[for="toggle"] {
-                    display: none;
-                }
-        
-                #menu-toggle ul {
-                    display: flex !important;
-                    flex-direction: row;
-                    gap: 1rem;
-                    background-color: transparent;
-                    padding: 0;
-                    margin: 0;
-                }
-        
-                #menu-toggle ul li {
-                    list-style: none;
-                }
-        
-                #menu-toggle ul a {
-                    text-decoration: none;
-                    color: var(--black);
-                    font-weight: bold;
-                }
+#contact {
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
+
+input[type="text"],
+input[type="email"],
+input[type="tel"]{
+    border: 1.5px solid var(--purple);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 50px;
+    padding: 10px 15px;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    color: var(--black);
+}
+/*radio button settings*/
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* Radio button 樣式 - 確保跨瀏覽器一致性 */
+input[type="radio"] {
+    /* 完全隱藏原生樣式 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* 基礎樣式 */
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+
+    /* 尺寸設定 - 使用em確保縮放 */
+    width: 5em;
+    height: 5em;
+
+    /* 邊框樣式 */
+    border: 0.15em solid var(--purple);
+    border-radius: 50%;
+
+    /* 對齊調整 */
+    transform: translateY(-0.075em);
+
+    /* 網格佈局用於居中 */
+    display: grid;
+    place-content: center;
+
+    /* 確保可點擊 */
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+/* 選中狀態的圓點 */
+input[type="radio"]::before {
+    content: "";
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: var(--purple);
+
+    /* Windows High Contrast Mode 支援 */
+    box-shadow: inset 1em 1em var(--purple);
+}
+
+/* 選中狀態 */
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+/* 焦點狀態 */
+input[type="radio"]:focus {
+    outline: none;
+    outline-offset: 0 0 0 2px var(--purple);
+}
+
+/* Radio button 標籤樣式 */
+label[for="prefEmail"],
+label[for="prefText"],
+label[for="prefPhone"] {
+    display: inline-flex;
+    align-items: center;
+    margin: 0.5em 0;
+    gap: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--black);
+}
+
+fieldset {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* 平均分配空間 */
+    align-items: center;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    /* 確保佔滿整個寬度 */
+}
+
+/* Legend 樣式 */
+legend {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--dark-gray);
+    width: 100%;
+    /* 讓標題佔滿整行 */
+    display: block;
+}
+
+/*select settings*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+select {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    height: 50px;        /* 較小的高度 */
+    padding: 10px 15px;   /* 較小的padding */
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    color: var(--dark-gray);
+    cursor: inherit;
+    line-height: 1;      /* 緊湊的行高 */
+    outline: none;
+    overflow: hidden;     /* 隱藏超出部分 */
+    text-overflow: ellipsis;  /* 超出時顯示... */
+    white-space: nowrap;  /* 不換行 */
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+/* Custom select 容器樣式 */
+.custom-select {
+    width: 100%;
+    height: 50px;
+    border: 1.5px solid var(--purple);
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: var(--white);
+    display: grid;
+    grid-template-areas: "select";
+    align-items: center;
+    position: relative;
+    padding: 10px 15px;
+  
+        
+        
+        
+}
+
+/* 修正箭頭選擇器 */
+.custom-select::after {
+    content: "";
+    
+    justify-self: end;
+    grid-area: select;
+}
+
+.custom-select:focus+.focus {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border: 2px solid var(--select-focus);
+    border-radius: inherit;
+}
+
+#mySubmit {
+    background-color: var(--purple);
+    color: var(--white);
+    border: none;
+    width: 100%;
+    height: 50px;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    color: var(--white);
+    cursor: pointer;
+    line-height: 1;
+}
+
+footer {
+    background-color: var(--light-gray);
+    color: var(--black);
+    padding: 1rem;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--black);
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5rem;
+}
+
+/* 確保在不同裝置上的一致性 */
+@media screen and (max-width: 768px) {
+    input[type="radio"] {
+       
+    }
+
+    input[type="radio"]::before {
+       
+    }
+}
+
+@media screen and (max-width: 600px){
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        position: relative;
+    }
+
+    #logo {
+        align-self: flex-start;
+    }
+
+    #menu-toggle {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        text-align: right;
+    }
+
+    /* 隱藏 checkbox */
+    #toggle {
+        display: none;
+    }
+
+    /* Menu 按鈕 */
+    label[for="toggle"] {
+        display: inline-block;
+        background-color: var(--yellow);
+        color: var(--black);
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+
+
+    /* 當選單打開時的按鈕樣式 */
+    #toggle:checked ~ label[for="toggle"] {
+        background-color: var(--black);
+        color: var(--white);
+        border-color: var(--white);
+        top: 100%;
+        right: 0;
+        flex-direction: column;
+        width: 100vw;
+        text-align: center;
+    }
+
+    /* 選單樣式 */
+    #menu-toggle ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        flex-direction: column;
+        background-color: var(--blue);
+        width: 100vw;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 顯示選單 */
+    #toggle:checked ~ label + ul {
+        display: flex;
+    }
+
+    #menu-toggle ul li {
+        list-style: none;
+        margin: 0.5rem 0;
+    }
+
+    #menu-toggle ul a {
+        text-decoration: none;
+        color: var(--black);
+        font-weight: bold;
+        display: block;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        transition: background-color 0.3s ease;
+    }
+
+    #menu-toggle ul a:hover {
+        background-color: rgba(0,0,0,0.1);
+    }
+}
+
+/* 桌面版樣式 */
+@media screen and (min-width: 858px){
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #menu-toggle {
+        position: static;
+        text-align: right;
+    }
+
+    label[for="toggle"] {
+        display: none;
+    }
+
+    #menu-toggle ul {
+        display: flex !important;
+        flex-direction: row;
+        gap: 1rem;
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+    }
+
+    #menu-toggle ul li {
+        list-style: none;
+    }
+
+    #menu-toggle ul a {
+        text-decoration: none;
+        color: var(--black);
+        font-weight: bold;
+    }
+}
+@media screen and (min-width: 1024px){
+    header {
+        padding: 1rem 2rem;
+    }
+
+    #menu-toggle ul a {
+        padding: 0.5rem 1.5rem;
+    }
+}
 
