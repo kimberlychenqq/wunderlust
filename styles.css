@@ -134,10 +134,13 @@ table {
     border-spacing: 0;
 }
 
-Kimberly Chen
+/* Kimberly Chen */
+
+@import 
+url('https://fonts.googleapis.com/css2?family=Molle&display=swap');
 
 
-#skip {
+.sr-only {
     position: absolute;
     left: -10000px;
     top: auto;
@@ -146,8 +149,8 @@ Kimberly Chen
     overflow: hidden;
 }
 
-#skip:focus {
-    position: static;
-    width: auto;
-    height: auto;
+h1, h2, h3{
+    font-family: "Molle", sans-serif;
+    font-weight: 400;
+    font-style: italic;
 }
