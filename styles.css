@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
+/*
 html,
 body,
 div,
@@ -91,8 +91,9 @@ video {
     font: inherit;
     vertical-align: baseline;
 }
-
+*/
 /* HTML5 display-role reset for older browsers */
+/*
 article,
 aside,
 details,
@@ -133,11 +134,12 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+*/
 
 /* Kimberly Chen */
 
 @import 
-url('https://fonts.googleapis.com/css2?family=Molle&display=swap');
+url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 .sr-only {
@@ -150,7 +152,14 @@ url('https://fonts.googleapis.com/css2?family=Molle&display=swap');
 }
 
 h1, h2, h3{
-    font-family: "Molle", sans-serif;
+    font-family: "Molle", cursive;
     font-weight: 400;
     font-style: italic;
+}
+
+h4, p, q, small, nav, button, form{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
 }
