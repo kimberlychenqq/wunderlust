@@ -173,46 +173,98 @@ h4, p, q, small, nav, button, form{
     font-style: normal;
 }
 
-header{
-    display: flex;
-}
-
-/* --- 初始設定：隱藏 checkbox --- */
-#toggle {
-    display: none;
-}
-
-/* --- 標籤樣式，這是 Menu 按鈕 --- */
-label[for="toggle"] {
-    display: block;
-    background-color: var(--yellow);
-    color: var(--black);
-    padding: 1rem;
-    text-align: center;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* --- 選單預設隱藏 --- */
-#menu-toggle ul {
-    display: none;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0;
-    margin: 1rem 0;
-    list-style: none;
-}
-
-/* --- Checkbox 被選取後，顯示選單 --- */
-#toggle:checked+label+ul {
-    display: flex;
-}
-
-
-#plan{
+#plan {
     background-color: var(--yellow);
 }
 
-#about{
+#about {
     background-color: var(--blue);
 }
+
+@media screen {(max-width: 600px;)
+    header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1rem;
+            position: relative;
+        }
+    
+        #logo {
+            align-self: flex-start;
+        }
+    
+        #menu-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            text-align: right;
+        }
+    
+        /* 隱藏 checkbox */
+        #toggle {
+            display: none;
+        }
+    
+        /* Menu 按鈕 */
+        label[for="toggle"] {
+            display: inline-block;
+            background-color: var(--yellow);
+            color: var(--black);
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    
+        /* 選單隱藏 */
+        #menu-toggle ul {
+            display: none;
+            flex-direction: column;
+            background-color: var(--yellow);
+            padding: 1rem;
+            margin-top: 0.5rem;
+            border-radius: 0.5rem;
+        }
+    
+        /* 顯示選單 */
+        #toggle:checked+label+ul {
+            display: flex;
+        }
+        
+                header {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+        
+                #menu-toggle {
+                    position: static;
+                    text-align: right;
+                }
+        
+                label[for="toggle"] {
+                    display: none;
+                }
+        
+                #menu-toggle ul {
+                    display: flex !important;
+                    flex-direction: row;
+                    gap: 1rem;
+                    background-color: transparent;
+                    padding: 0;
+                    margin: 0;
+                }
+        
+                #menu-toggle ul li {
+                    list-style: none;
+                }
+        
+                #menu-toggle ul a {
+                    text-decoration: none;
+                    color: var(--black);
+                    font-weight: bold;
+                }
+}
+
+
