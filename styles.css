@@ -181,7 +181,7 @@ h4, p, q, small, nav, button, form{
     background-color: var(--blue);
 }
 
-@media screen {(max-width: 600px;)
+@media screen (max-width: 600px;){
     header {
             display: flex;
             flex-direction: column;
