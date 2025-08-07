@@ -176,12 +176,52 @@ h4, p, q, small, nav, button, form{
     font-style: normal;
 }
 
+header {
+    background: linear-gradient(to bottom, var(--teal), var(--white));
+}
+
+
 #plan {
     background-color: var(--yellow);
 }
 
+#plan h4 {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 26px;
+    text-align: center;
+}
+
+#plan section {
+    background-color: var(--teal);
+    border-width: 3px;
+    border-color: var(--white);
+    border-style: solid;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin: 1rem 2rem;
+}
+
+#testimonials h4{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+}
+
+#testimonials p {
+    font-size: 20px;
+}
+
+
 #about {
     background-color: var(--blue);
+}
+
+#about h4 {
+    font-weight: bold;
+    text-transform: uppercase;
+    
 }
 
 #contact {
@@ -407,30 +447,61 @@ footer a {
     margin: 0.5rem;
 }
 
-/* 確保在不同裝置上的一致性 */
-@media screen and (max-width: 768px) {
-    input[type="radio"] {
-       
-    }
-
-    input[type="radio"]::before {
-       
-    }
-}
-
-@media screen and (max-width: 600px){
+/* phone */
+@media screen and (min-width: 320px) {
     header {
+        padding: 1rem;
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 1rem;
-        position: relative;
     }
 
-    #logo {
-        align-self: flex-start;
+    header h1 {
+        font-size: 1.5rem;
+        margin: 0.5rem 0;
+        font-weight: bold;
+    }
+    header p {
+        font-size: 0.9rem;
+        margin: 0.5rem 0;
+        line-height: 1.4;
     }
 
+    #logo img{
+        width: 60px;
+        height: 60px;
+        margin-bottom: 0.5rem;
+    }
+
+        #intro {
+            padding: 2rem 1rem;
+        }
+    
+        #intro h2 {
+            font-weight: bold;
+        }
+    
+        #intro p {
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+    
+        #img-grid {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+    
+        #img-grid img {
+            width: 100%;
+            height: auto;
+        }
+   /* menu */
     #menu-toggle {
         position: absolute;
         top: 1rem;
@@ -455,6 +526,10 @@ footer a {
         border: 2px solid transparent;
     }
 
+        input[type="radio"] {}
+    
+        input[type="radio"]::before {}
+        
 
     /* 當選單打開時的按鈕樣式 */
     #toggle:checked ~ label[for="toggle"] {
@@ -505,51 +580,129 @@ footer a {
     #menu-toggle ul a:hover {
         background-color: rgba(0,0,0,0.1);
     }
+
+    #plan section {
+        display: grid;
+        grid-template-columns: repeat(3, 12px);
+        grid-template-rows: repeat(3, auto);
+        gap: 0.5rem;
+        padding: 1rem;
+        justify-items: center;
+    }
+
+
+
+
+    #testimonials section {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(4, auto);
+       
+    }
+
+    #about div{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(2, auto);
+        gap: 0.5rem;
+        padding: 1rem;
+        justify-items: center;
+    }
 }
 
-/* 桌面版樣式 */
-@media screen and (min-width: 858px){
+/* ipad */
+@media screen and (min-width: 768px){
     header {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
 
-    #menu-toggle {
-        position: static;
-        text-align: right;
-    }
-
-    label[for="toggle"] {
+    /* 隱藏 checkbox */
+    #toggle {
         display: none;
     }
 
-    #menu-toggle ul {
-        display: flex !important;
+
+        #menu-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            text-align: right;
+        }
+    
+       
+    
+        #menu-toggle ul li{
+        display: flex;
         flex-direction: row;
         gap: 1rem;
-        background-color: transparent;
-        padding: 0;
-        margin: 0;
     }
 
-    #menu-toggle ul li {
-        list-style: none;
+    #testimonials section {
+        display: grid;
+        grid-template-columns: repeat(2, 300px);
+        grid-template-rows: repeat(2, auto);
+        justify-items: center;
     }
 
-    #menu-toggle ul a {
-        text-decoration: none;
-        color: var(--black);
-        font-weight: bold;
-    }
+
+
+    #about div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 0.5rem;
+        padding: 1rem;
+        justify-items: center;
 }
+}
+
+/* desktop */
 @media screen and (min-width: 1024px){
     header {
         padding: 1rem 2rem;
     }
 
-    #menu-toggle ul a {
-        padding: 0.5rem 1.5rem;
+    label[for="toggle"] {
+        display: none;
+    }
+    
+    /* 顯示選單內容 */
+    #menu-toggle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    #menu-toggle ul{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        background-color: transparent;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+    #menu-toggle ul li{
+        background-color: var(--white);
+        color: var(--black);
+        margin: 0;
+    }
+
+    #testimonials section {
+        display: grid;
+        grid-template-columns: repeat(2, 300px);
+        grid-template-rows: repeat(2, auto);
+        justify-items: center;
+    }
+
+    #about div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 0.5rem;
+        padding: 8rem 10rem;
+        justify-items: center;
+
     }
 }
-
