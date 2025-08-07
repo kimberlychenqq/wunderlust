@@ -610,13 +610,53 @@ footer a {
         background-color: rgba(0,0,0,0.1);
     }
 
+    /* Plan Your Trip 區域樣式 */
+    #plan {
+        background-color: var(--yellow);
+        padding: 2rem;
+    }
+
+    #plan h4 {
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 26px;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    #plan > div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
     #plan section {
-        display: grid;
-        grid-template-columns: repeat(3, 12px);
-        grid-template-rows: repeat(3, auto);
-        gap: 0.5rem;
-        padding: 1rem;
-        justify-items: center;
+        background-color: var(--teal);
+        border: 3px solid var(--white);
+        border-radius: 10px;
+        padding: 2.5rem;
+        margin: 0;
+        width: 300px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #plan section h4 {
+        font-size: 16px;
+        margin: 0;
+        color: var(--black);
+    }
+
+    #plan section img {
+        width: 200px;
+        height: 150px;
+        filter: brightness(0) invert(1);
     }
 
     #mySubmit {
@@ -765,6 +805,86 @@ footer a {
         grid-template-rows: repeat(2, auto);
         justify-items: center;
     }
+
+    #img-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    #img-grid>img:first-child {
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+    }
+
+    #img-grid>img:nth-child(2) {
+        grid-column: 2;
+        grid-row: 1;
+        width: 100%;
+    }
+
+    #img-grid>picture {
+        grid-column: 1 / span 2;
+        /* 跨兩欄 */
+        grid-row: 2;
+    }
+    
+        #img-grid picture img {
+            width: 100%;
+            height: auto;
+        }
+    
+    
+    /* Plan Your Trip 區域樣式 */
+    #plan {
+        background-color: var(--yellow);
+        padding: 2rem;
+    }
+
+    #plan h4 {
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 26px;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    #plan > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        justify-items: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    #plan section {
+        background-color: var(--teal);
+        border: 3px solid var(--white);
+        border-radius: 10px;
+        padding: 2.5rem;
+        margin: 0;
+        width: 300px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #plan section h4 {
+        font-size: 16px;
+        margin: 0;
+        color: var(--black);
+    }
+
+    #plan section img {
+        width: 200px;
+        height: 150px;
+        filter: brightness(0) invert(1);
+    }
+
 
     fieldset {
         display: flex;
@@ -1044,5 +1164,54 @@ footer a {
         align-self: flex-end;  /* 新增：在 flex 容器中靠右 */
         position: relative;  /* 新增：相對定位 */
         right: 0;           /* 新增：右邊對齊 */
+    }
+
+    /* Plan Your Trip 區域樣式 */
+    #plan {
+        background-color: var(--yellow);
+        padding: 2rem;
+    }
+
+    #plan h4 {
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 26px;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    #plan > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        justify-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    #plan section {
+        background-color: var(--teal);
+        border: 3px solid var(--white);
+        border-radius: 10px;
+        padding: 2.5rem;
+        margin: 0;
+        width: 300px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #plan section h4 {
+        font-size: 16px;
+        margin: 0;
+        color: var(--black);
+    }
+
+    #plan section img {
+        width: 200px;
+        height: 150px;
+        filter: brightness(0) invert(1);
     }
 }
