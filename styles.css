@@ -252,6 +252,10 @@ input[type="tel"]{
     box-sizing: border-box;
 }
 
+.required {
+    color: var(--purple);
+}
+
 /* Radio button 樣式 - 確保跨瀏覽器一致性 */
 input[type="radio"] {
     /* 完全隱藏原生樣式 */
@@ -310,30 +314,8 @@ input[type="radio"]:focus {
     outline-offset: 0 0 0 2px var(--purple);
 }
 
-/* Radio button 標籤樣式 */
-label[for="prefEmail"],
-label[for="prefText"],
-label[for="prefPhone"] {
-    display: inline-flex;
-    align-items: center;
-    margin: 0.5em 0;
-    gap: 1rem;
-    cursor: pointer;
-    font-size: 1rem;
-    color: var(--black);
-}
-
-fieldset {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    /* 平均分配空間 */
-    align-items: center;
-    border: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    /* 確保佔滿整個寬度 */
+.form-required {
+    font-size: 10px;  /* 新增：讓字體變小 */
 }
 
 /* Legend 樣式 */
@@ -419,19 +401,7 @@ select::-ms-expand {
     border-radius: inherit;
 }
 
-#mySubmit {
-    background-color: var(--purple);
-    color: var(--white);
-    border: none;
-    width: 100%;
-    height: 50px;
-    margin: 0.5rem 0;
-    font-size: 1rem;
-    font-family: "Montserrat", sans-serif;
-    color: var(--white);
-    cursor: pointer;
-    line-height: 1;
-}
+
 
 footer {
     background-color: var(--light-gray);
@@ -519,20 +489,30 @@ footer a {
     }
 
     /* Menu 按鈕 */
-    label[for="toggle"] {
-        display: inline-block;
-        background-color: var(--yellow);
-        color: var(--black);
-        padding: 0.5rem 1rem;
-        cursor: pointer;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
+    fieldset {
+        display: flex;
+        flex-direction: column;  /* 新增：手機時垂直排列 */
+        justify-content: flex-start;  /* 新增：從頂部開始 */
+        align-items: flex-start;  /* 新增：左對齊 */
+        border: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
     }
 
-        input[type="radio"] {}
-    
-        input[type="radio"]::before {}
+    /* Radio button 標籤樣式 */
+    label[for="prefEmail"],
+    label[for="prefText"],
+    label[for="prefPhone"] {
+        display: flex;  /* 新增：手機時使用 flex */
+        align-items: center;
+        margin: 0.5em 0;
+        gap: 1rem;
+        cursor: pointer;
+        font-size: 1rem;
+        color: var(--black);
+        width: 100%;  /* 新增：確保佔滿寬度 */
+    }
         
 
     /* 當選單打開時的按鈕樣式 */
@@ -594,7 +574,19 @@ footer a {
         justify-items: center;
     }
 
-
+    #mySubmit {
+        background-color: var(--purple);
+        color: var(--white);
+        border: none;
+        width: 100%;
+        height: 50px;
+        margin: 0.5rem 0;
+        font-size: 1rem;
+        font-family: "Montserrat", sans-serif;
+        color: var(--white);
+        cursor: pointer;
+        line-height: 1;
+    }
 
 
     #testimonials section {
@@ -650,7 +642,53 @@ footer a {
         justify-items: center;
     }
 
+    fieldset {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* 平均分配空間 */
+        align-items: center;
+        border: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        /* 確保佔滿整個寬度 */
+    }
+    /* Radio button 標籤樣式 */
+    label[for="prefEmail"],
+    label[for="prefText"],
+    label[for="prefPhone"] {
+        display: inline-flex;
+        align-items: center;
+        margin: 0.5em 0;
+        gap: 1rem;
+        cursor: pointer;
+        font-size: 1rem;
+        color: var(--black);
+    }
+    label[for="prefText"] {
+        justify-content: center;
+    }
+    label[for="prefPhone"] {
+        justify-content: flex-end;
+    }
 
+    #mySubmit {
+        background-color: var(--purple);
+        color: var(--white);
+        border: none;
+        width: 50%;  /* 平板時一半寬度 */
+        height: 50px;
+        margin: 0.5rem 0;
+        font-size: 1rem;
+        font-family: "Montserrat", sans-serif;
+        color: var(--white);
+        cursor: pointer;
+        line-height: 1;
+        margin-left: auto;  /* 新增：靠右對齊 */
+        margin-right: 0;    /* 新增：靠右對齊 */
+        transform: translateX(100%);  /* 新增：水平移動到右邊 */
+    }
 
     #about div {
         display: grid;
@@ -701,6 +739,37 @@ footer a {
         justify-items: center;
     }
 
+    fieldset {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* 平均分配空間 */
+        align-items: center;
+        border: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    /* 確保佔滿整個寬度 */
+    }
+    /* Radio button 標籤樣式 */
+    label[for="prefEmail"],
+    label[for="prefText"],
+    label[for="prefPhone"] {
+        display: inline-flex;
+        align-items: center;
+        margin: 0.5em 0;
+        gap: 1rem;
+        cursor: pointer;
+        font-size: 1rem;
+        color: var(--black);
+    }
+    label[for="prefText"] {
+        justify-content: center;
+    }
+    label[for="prefPhone"] {
+        justify-content: flex-end;
+    }
+    
     #about div {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
