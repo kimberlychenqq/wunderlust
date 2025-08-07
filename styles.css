@@ -208,12 +208,18 @@ header {
 #testimonials h4{
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
 }
 
 #testimonials p {
     font-size: 20px;
+    text-align: center;
+}
+
+#testimonials q{
+    font-size: 16px;
+    text-align: center;
 }
 
 
@@ -674,12 +680,24 @@ footer a {
     }
 
 
-    #testimonials section {
+    #testimonials div{
         display: grid;
-        grid-template-columns: repeat(1, auto);
+        grid-template-columns: repeat(1, 300px);
         grid-template-rows: repeat(4, auto);
-       
+        justify-content: center;
     }
+
+    #testimonials section img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        margin: 0 auto;
+        display: block;
+        align-self: center;
+    }
+
+    
+
 
     #about div{
         display: grid;
@@ -799,11 +817,13 @@ footer a {
         display: block;
     }
 
-    #testimonials section {
+    #testimonials div {
         display: grid;
         grid-template-columns: repeat(2, 300px);
         grid-template-rows: repeat(2, auto);
         justify-items: center;
+        gap: 4rem; 
+        align-items: center;
     }
 
     #img-grid {
@@ -830,10 +850,10 @@ footer a {
         grid-row: 2;
     }
     
-        #img-grid picture img {
-            width: 100%;
-            height: auto;
-        }
+    #img-grid picture img {
+        width: 100%;
+        height: auto;
+    }
     
     
     /* Plan Your Trip 區域樣式 */
@@ -1010,6 +1030,21 @@ footer a {
         font-size: 2rem;
     }
 
+    
+
+    #intro h2 {
+        font-size: 30px;
+        text-align: center;
+        margin: auto;
+        max-width: 600px;
+    }
+
+    #intro p {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 600px;
+    }
+
     header p {
         margin: 0;
         font-size: 1rem;
@@ -1071,11 +1106,20 @@ footer a {
         display: block;
     }
 
-    #testimonials section {
+    #testimonials div {
         display: grid;
-        grid-template-columns: repeat(2, 300px);
-        grid-template-rows: repeat(2, auto);
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 5rem;
+        padding: 8rem 10rem;
         justify-items: center;
+    }
+
+    #testimonials section img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        margin: 0 auto;
+        display: block;
     }
 
     fieldset {
