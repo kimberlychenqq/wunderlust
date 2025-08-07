@@ -342,15 +342,13 @@ select {
     background-color: transparent;
     border: none;
     width: 100%;
-<<<<<<< HEAD
     height: 50px;
     /* 修改：與 .custom-select 相同高度 */
     padding: 0;
     /* 較小的padding */
-=======
+    margin: 0;
     height: 50px;        /* 修改：與 .custom-select 相同高度 */
     padding: 0;   /* 較小的padding */
->>>>>>> origin/main
     margin: 0;
     font-size: 1rem;
     font-family: "Montserrat", sans-serif;
@@ -359,7 +357,6 @@ select {
     line-height: 1;
     /* 緊湊的行高 */
     outline: none;
-<<<<<<< HEAD
     overflow: hidden;
     /* 隱藏超出部分 */
     text-overflow: ellipsis;
@@ -372,18 +369,16 @@ select {
     /* 垂直置中 */
     justify-content: left;
     /* 水平置中 */
-=======
     overflow: hidden;     /* 隱藏超出部分 */
     text-overflow: ellipsis;  /* 超出時顯示... */
     white-space: nowrap;  /* 不換行 */
     display: flex;        /* 使用 flexbox */
     align-items: center;  /* 垂直置中 */
     justify-content: left; /* 水平置中 */
->>>>>>> origin/main
 }
 
 select::-ms-expand {
-    display: left;
+    display: none;
 }
 
 /* Custom select 容器樣式 */
@@ -396,15 +391,10 @@ select::-ms-expand {
     cursor: pointer;
     line-height: 1.1;
     background-color: var(--white);
-<<<<<<< HEAD
     display: flex;
     /* 修改：改為 flex 佈局 */
     align-items: center;
     /* 修改：垂直置中 */
-=======
-    display: flex;        /* 修改：改為 flex 佈局 */
-    align-items: center;  /* 修改：垂直置中 */
->>>>>>> origin/main
     position: relative;
     padding: 10px 15px;
 }
@@ -412,15 +402,10 @@ select::-ms-expand {
 /* 修正箭頭選擇器 */
 .custom-select::after {
     content: "";
-<<<<<<< HEAD
     width: 30px;
     /* 增加寬度 */
     height: 12px;
     /* 保持高度 */
-=======
-    width: 30px;         /* 增加寬度 */
-    height: 12px;        /* 保持高度 */
->>>>>>> origin/main
     background: var(--purple);
     clip-path: polygon(0 0, 50% 50%, 100% 0, 50% 100%);
     position: absolute;
