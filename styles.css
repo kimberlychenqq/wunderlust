@@ -184,7 +184,13 @@ header h1{
     font-size: 45px;
 }
 
-h3{
+#plan h3,
+#testimonials h3,
+#about h3{
+    font-size: 30px;
+}
+
+#about h3{
     font-size: 30px;
 }
 
@@ -251,6 +257,15 @@ h3{
     padding-right: 2rem;
 }
 
+#contact h3{
+    font-size: 30px;
+}
+
+#contact .form-required{
+    font-size: 20px;
+    font-weight: normal;
+    font-family: "Montserrat", sans-serif;
+}
 
 input[type="text"],
 input[type="email"],
@@ -341,9 +356,7 @@ input[type="radio"]:focus {
     outline-offset: 0 0 0 2px var(--purple);
 }
 
-.form-required {
-    font-size: 10px;  /* 新增：讓字體變小 */
-}
+
 
 /* Legend 樣式 */
 legend {
@@ -494,9 +507,6 @@ footer a {
         height: 100px;
         margin-bottom: 0.5rem;
     }
-
-    
-
 
     #intro {
         padding: 2rem 1rem;
