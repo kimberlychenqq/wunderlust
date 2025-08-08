@@ -171,7 +171,7 @@ h1, h2, h3{
 
 h4, p, q, small, nav, button, form{
     font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
+    font-optical-sizing: normal;
     font-weight: 400;
     font-style: normal;
 }
@@ -353,7 +353,7 @@ input[type="radio"]:checked::before {
 /* 焦點狀態 */
 input[type="radio"]:focus {
     outline: none;
-    outline-offset: 0 0 0 2px var(--purple);
+    outline-offset: 2px;
 }
 
 
@@ -563,7 +563,7 @@ footer a {
     /* Menu 按鈕 */
     fieldset {
         display: flex;
-        flex-direction: column;  /
+        flex-direction: column;  
         justify-content: flex-start; 
         align-items: flex-start; 
         border: none;
