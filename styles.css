@@ -180,6 +180,14 @@ header {
     background: linear-gradient(to bottom, var(--teal), var(--white));
 }
 
+header h1{
+    font-size: 45px;
+}
+
+h3{
+    font-size: 30px;
+}
+
 #menu-toggle ul li{
     text-transform: uppercase;
 }
@@ -205,6 +213,10 @@ header {
     margin: 1rem 2rem;
 }
 
+#testimonials{
+    padding: 10px 10px;
+}
+
 #testimonials h4{
     font-weight: bold;
     text-transform: uppercase;
@@ -225,6 +237,7 @@ header {
 
 #about {
     background-color: var(--blue);
+    padding: 10px 10px;
 }
 
 #about h4 {
@@ -467,7 +480,6 @@ footer a {
     }
 
     header h1 {
-        font-size: 1.5rem;
         margin: 0.5rem 0;
         font-weight: bold;
     }
@@ -485,34 +497,34 @@ footer a {
 
     
 
-  
-        #intro {
-            padding: 2rem 1rem;
-        }
-    
-        #intro h2 {
-            font-weight: bold;
-        }
-    
-        #intro p {
-            font-size: 1rem;
-            line-height: 1.6;
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: left;
-        }
-    
-        #img-grid {
-            margin-top: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-    
-        #img-grid img {
-            width: 100%;
-            height: auto;
-        }
+
+    #intro {
+        padding: 2rem 1rem;
+    }
+
+    #intro h2 {
+        font-weight: bold;
+    }
+
+    #intro p {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    #img-grid {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #img-grid img {
+        width: 100%;
+        height: auto;
+    }
    /* menu */
     #menu-toggle {
         position: absolute;
@@ -526,7 +538,7 @@ footer a {
         display: none;
     }
 
-    /* Menu 按鈕基本樣式 */
+    /* Menu button style */
     label[for="toggle"] {
         background-color: var(--yellow);
         color: var(--black);
@@ -541,9 +553,9 @@ footer a {
     /* Menu 按鈕 */
     fieldset {
         display: flex;
-        flex-direction: column;  /* 新增：手機時垂直排列 */
-        justify-content: flex-start;  /* 新增：從頂部開始 */
-        align-items: flex-start;  /* 新增：左對齊 */
+        flex-direction: column;  /
+        justify-content: flex-start; 
+        align-items: flex-start; 
         border: none;
         padding: 0;
         margin: 0;
@@ -554,19 +566,19 @@ footer a {
     label[for="prefEmail"],
     label[for="prefText"],
     label[for="prefPhone"] {
-        display: flex;  /* 新增：手機時使用 flex */
+        display: flex;  
         align-items: center;
         margin: 0.2rem 0;
         gap: 1rem;
         cursor: pointer;
         font-size: 1rem;
         color: var(--black);
-        width: 100%;  /* 新增：確保佔滿寬度 */
+        width: 100%;  
         font-weight: normal;
     }
         
 
-    /* 當選單打開時的按鈕樣式 */
+    /* open menu style*/
     #toggle:checked ~ label[for="toggle"] {
         background-color: var(--black);
         color: var(--white);
@@ -578,7 +590,7 @@ footer a {
         text-align: center;
     }
 
-    /* 選單樣式 */
+    /* list style*/
     #menu-toggle ul {
         display: none;
         position: absolute;
@@ -592,7 +604,7 @@ footer a {
         padding: 0;
     }
 
-    /* 顯示選單 */
+    /* show list*/
     #toggle:checked ~ label + ul {
         display: flex;
     }
@@ -616,7 +628,7 @@ footer a {
         background-color: rgba(0,0,0,0.1);
     }
 
-    /* Plan Your Trip 區域樣式 */
+   
     #plan {
         background-color: var(--yellow);
         padding: 2rem;
@@ -696,8 +708,6 @@ footer a {
         align-self: center;
     }
 
-    
-
 
     #about div{
         display: grid;
@@ -713,7 +723,7 @@ footer a {
 @media screen and (min-width: 768px){
     header {
         display: grid;
-        grid-template-columns: auto 1fr; /* 第一欄是 logo，第二欄放 h1+p */
+        grid-template-columns: auto 1fr; /* column logo, column h1+p */
         grid-template-rows: auto auto auto; /* logo, h1, p */
         gap: 0.5rem;
         align-items: center;
