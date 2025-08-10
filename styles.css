@@ -140,6 +140,14 @@ table {
 
 @import 
 url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* 重置預設邊距 */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
 :root{
     --yellow: #F6D64A;
     --teal: #55BCD5;
@@ -178,6 +186,8 @@ h4, p, q, small, nav, button, form{
 
 header {
     background: linear-gradient(to bottom, var(--teal), var(--white));
+    margin: 0;
+    width: 100%;
 }
 
 header h1{
@@ -200,6 +210,8 @@ header h1{
 
 #plan {
     background-color: var(--yellow);
+    margin: 0;
+    width: 100%;
 }
 
 #plan h4 {
